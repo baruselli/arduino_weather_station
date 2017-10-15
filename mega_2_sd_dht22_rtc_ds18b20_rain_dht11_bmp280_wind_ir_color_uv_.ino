@@ -509,49 +509,4 @@ else{
 }
 
 
-/*void DoLogSDCard()
-{
-   int len = strlen(buffer);  // extern var char [128]
-
-   char name[24];
-   now = RTC.now();  // a ds1307
-   sprintf(name, "%04d%02d%02d.log", now.year(), now.month(), now.day()); // every day a new file
-
-   // initialize the SD card
-   if (!card.init())
-   {
-     mySerial.print(card.errorCode(), HEX); // uses New SoftSerial
-     return;
-   }
-   // initialize a FAT volume
-   if (!volume.init(card))
-   {
-     mySerial.print(card.errorCode(), HEX);
-     return;
-   }
-   // open the root directory
-   if (!root.openRoot(volume))
-   {
-      mySerial.print(card.errorCode(), HEX);
-     return;
-   }
-
-   file.writeError = false;
-   if (!file.open(root, name, O_CREAT | O_APPEND | O_WRITE))
-   {
-     mySerial.println("error opening file");
-   }
-   else
-   {
-     file.println(buffer);
-     file.timestamp(T_WRITE, now.year(), now.month(), now.day(),
-           now.hour(), now.minute(), now.second());
-     file.close();
-   }
-
-   root.close();
-}
-*/
-
-
 
